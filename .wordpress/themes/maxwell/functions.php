@@ -74,39 +74,10 @@ if ( ! function_exists( 'maxwell_setup' ) ) :
 		add_theme_support( 'woocommerce' );
 
 		// Add extra theme styling to the visual editor.
-		add_editor_style( array( 'assets/css/editor-style.css', get_template_directory_uri() . '/assets/css/custom-fonts.css' ) );
+		add_editor_style( array( 'assets/css/editor-style.css' ) );
 
 		// Add Theme Support for Selective Refresh in Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		// Add custom color palette for Gutenberg.
-		add_theme_support( 'editor-color-palette', array(
-			array(
-				'name'  => esc_html_x( 'Primary', 'Gutenberg Color Palette', 'maxwell' ),
-				'slug'  => 'primary',
-				'color' => apply_filters( 'maxwell_primary_color', '#33bbcc' ),
-			),
-			array(
-				'name'  => esc_html_x( 'White', 'Gutenberg Color Palette', 'maxwell' ),
-				'slug'  => 'white',
-				'color' => '#ffffff',
-			),
-			array(
-				'name'  => esc_html_x( 'Light Gray', 'Gutenberg Color Palette', 'maxwell' ),
-				'slug'  => 'light-gray',
-				'color' => '#f0f0f0',
-			),
-			array(
-				'name'  => esc_html_x( 'Dark Gray', 'Gutenberg Color Palette', 'maxwell' ),
-				'slug'  => 'dark-gray',
-				'color' => '#777777',
-			),
-			array(
-				'name'  => esc_html_x( 'Black', 'Gutenberg Color Palette', 'maxwell' ),
-				'slug'  => 'black',
-				'color' => '#303030',
-			),
-		) );
 
 		// Add support for responsive embed blocks.
 		add_theme_support( 'responsive-embeds' );
@@ -178,6 +149,9 @@ function maxwell_scripts() {
 	// Register and Enqueue Stylesheet.
 	wp_enqueue_style( 'maxwell-stylesheet', get_stylesheet_uri(), array(), $theme_version );
 
+	// Register and Enqueue Safari Flexbox CSS fixes.
+	wp_enqueue_style( 'maxwell-safari-flexbox-fixes', get_template_directory_uri() . '/assets/css/safari-flexbox-fixes.css', array(), '20200827' );
+
 	// Register Genericons.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/genericons/genericons.css', array(), '3.4.1' );
 
@@ -186,10 +160,20 @@ function maxwell_scripts() {
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
 	// Register and enqueue navigation.js.
-	wp_enqueue_script( 'maxwell-jquery-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20160719' );
+	if ( ( has_nav_menu( 'primary' ) || has_nav_menu( 'secondary' ) ) && ! maxwell_is_amp() ) {
+		wp_enqueue_script( 'maxwell-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array( 'jquery' ), '20200822', true );
+		$maxwell_l10n = array(
+			'expand'   => esc_html__( 'Expand child menu', 'maxwell' ),
+			'collapse' => esc_html__( 'Collapse child menu', 'maxwell' ),
+			'icon'     => maxwell_get_svg( 'expand' ),
+		);
+		wp_localize_script( 'maxwell-navigation', 'maxwellScreenReaderText', $maxwell_l10n );
+	}
 
-	// Passing Parameters to navigation.js.
-	wp_localize_script( 'maxwell-jquery-navigation', 'maxwell_menu_title', esc_html__( 'Navigation', 'maxwell' ) );
+	// Enqueue svgxuse to support external SVG Sprites in Internet Explorer.
+	if ( ! maxwell_is_amp() ) {
+		wp_enqueue_script( 'svgxuse', get_theme_file_uri( '/assets/js/svgxuse.min.js' ), array(), '1.2.6' );
+	}
 
 	// Register Comment Reply Script for Threaded Comments.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -200,22 +184,38 @@ add_action( 'wp_enqueue_scripts', 'maxwell_scripts' );
 
 
 /**
- * Enqueue custom fonts.
- */
-function maxwell_custom_fonts() {
-	wp_enqueue_style( 'maxwell-custom-fonts', get_template_directory_uri() . '/assets/css/custom-fonts.css', array(), '20180413' );
+* Enqueue theme fonts.
+*/
+function maxwell_theme_fonts() {
+	$fonts_url = maxwell_get_fonts_url();
+
+	// Load Fonts if necessary.
+	if ( $fonts_url ) {
+		require_once get_theme_file_path( 'inc/wptt-webfont-loader.php' );
+		wp_enqueue_style( 'maxwell-theme-fonts', wptt_get_webfont_url( $fonts_url ), array(), '20201110' );
+	}
 }
-add_action( 'wp_enqueue_scripts', 'maxwell_custom_fonts', 1 );
-add_action( 'enqueue_block_editor_assets', 'maxwell_custom_fonts', 1 );
+add_action( 'wp_enqueue_scripts', 'maxwell_theme_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'maxwell_theme_fonts', 1 );
 
 
 /**
- * Enqueue editor styles for the new Gutenberg Editor.
+ * Retrieve webfont URL to load fonts locally.
  */
-function maxwell_block_editor_assets() {
-	wp_enqueue_style( 'maxwell-editor-styles', get_theme_file_uri( '/assets/css/gutenberg-styles.css' ), array(), '20191118', 'all' );
+function maxwell_get_fonts_url() {
+	$font_families = array(
+		'Titillium Web:400,400italic,700,700italic',
+		'Amaranth:400,400italic,700,700italic',
+	);
+
+	$query_args = array(
+		'family'  => urlencode( implode( '|', $font_families ) ),
+		'subset'  => urlencode( 'latin,latin-ext' ),
+		'display' => urlencode( 'swap' ),
+	);
+
+	return apply_filters( 'maxwell_get_fonts_url', add_query_arg( $query_args, 'https://fonts.googleapis.com/css' ) );
 }
-add_action( 'enqueue_block_editor_assets', 'maxwell_block_editor_assets' );
 
 
 /**
@@ -258,11 +258,17 @@ require get_template_directory() . '/inc/theme-info.php';
 require get_template_directory() . '/inc/customizer/customizer.php';
 require get_template_directory() . '/inc/customizer/default-options.php';
 
+// Include SVG Icon Functions.
+require get_template_directory() . '/inc/icons.php';
+
 // Include Extra Functions.
 require get_template_directory() . '/inc/extras.php';
 
 // Include Template Functions.
 require get_template_directory() . '/inc/template-tags.php';
+
+// Include Gutenberg Features.
+require get_template_directory() . '/inc/gutenberg.php';
 
 // Include support functions for Theme Addons.
 require get_template_directory() . '/inc/addons.php';

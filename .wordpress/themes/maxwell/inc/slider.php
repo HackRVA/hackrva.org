@@ -19,7 +19,7 @@ function maxwell_slider_scripts() {
 	$theme_options = maxwell_theme_options();
 
 	// Register and enqueue FlexSlider JS and CSS if necessary.
-	if ( true === $theme_options['slider_blog'] or true === $theme_options['slider_magazine'] or is_page_template( 'template-slider.php' ) ) :
+	if ( ( true === $theme_options['slider_blog'] or true === $theme_options['slider_magazine'] or is_page_template( 'template-slider.php' ) ) && ! maxwell_is_amp() ) :
 
 		// FlexSlider JS.
 		wp_enqueue_script( 'jquery-flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js', array( 'jquery' ), '2.6.0' );
@@ -28,7 +28,7 @@ function maxwell_slider_scripts() {
 		wp_enqueue_script( 'maxwell-slider', get_template_directory_uri() . '/assets/js/slider.js', array( 'jquery-flexslider' ), '20170421' );
 
 		// Register and enqueue slider CSS.
-		wp_enqueue_style( 'maxwell-slider', get_template_directory_uri() . '/assets/css/flexslider.css', array(), '20170421' );
+		wp_enqueue_style( 'maxwell-slider', get_template_directory_uri() . '/assets/css/flexslider.css', array(), '20210303' );
 
 	endif;
 
@@ -69,7 +69,7 @@ if ( ! function_exists( 'maxwell_slider_image' ) ) :
 
 			<a class="slide-image-link" href="<?php the_permalink(); ?>" rel="bookmark">
 				<figure class="slide-image-wrap">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-slider-image.png" class="slide-image default-slide-image wp-post-image" />
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/default-slider-image.png" class="slide-image default-slide-image wp-post-image" />
 				</figure>
 			</a>
 

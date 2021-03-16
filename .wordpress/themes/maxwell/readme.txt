@@ -2,9 +2,9 @@
 Author URI: https://themezee.com
 Theme URI: https://themezee.com/themes/maxwell/
 Contributors: themezee
-Tags: two-columns, blog, news, custom-background, custom-header, custom-menu, grid-layout, blog, entertainment, news, editor-style, rtl-language-support, grid-layout, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, three-columns
-Requires at least: 4.7
-Tested up to: 5.3
+Tags: two-columns, blog, news, custom-background, custom-header, custom-menu, grid-layout, blog, entertainment, news, editor-style, block-styles, rtl-language-support, grid-layout, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, three-columns
+Requires at least: 5.2
+Tested up to: 5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,47 @@ For more information about Maxwell please go to https://themezee.com/themes/maxw
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 2.2.2 - 2021-03-11 =
+* added CSS variables for Widget Bundle and Related Posts plugin styling
+
+= 2.2.1 - 2021-03-09 =
+* updated CSS variables for colors
+* updated Block Editor color palette
+
+= 2.2 - 2021-02-13 =
+* added WPTT Webfont loader to host theme fonts locally
+* added CSS variables for theme colors
+
+= 2.1.1 - 2020-10-05 =
+* added AMP dropdown toggles for sub menus
+* added CSS variables for typography styling
+* fixed lazy loading bug for slider images
+
+= 2.1 - 2020-09-16 =
+* added support for the official AMP plugin
+
+= 2.0.3 - 2020-08-27 =
+* fixed styling of footer area in Safari
+
+= 2.0.2 - 2020-08-24 =
+* fixed styling of menu items with empty links
+* fixed undefined naviClass variable warning
+
+= 2.0.1 - 2020-08-21 =
+* added svgxuse polyfill to display SVG icons in Internet Explorer
+
+= 2.0 - 2020-08-18 =
+* Changed implementation, styles and scripts of main navigation menu
+* Important Update: Please read https://themezee.com/2020/08/updates-for-improved-navigation-menus/
+
+= 1.9 - 2020-04-21 =
+* added Retina Logo option
+* restructured Sass files and CSS sections
+
+= 1.8.5 - 2020-04-06 =
+* added new wp_body_open action hook
+* improved Block Editor styling for WordPress 5.4
 
 = 1.8.4 - 2019-11-18 =
 * fixed styling of captions in Image and Gallery block
@@ -206,15 +247,23 @@ Copyright: 2012-2015 Nicolas Gallagher and Jonathan Neal
 License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
 Copyright: 2015 WooThemes, http://www.woothemes.com
 
-5. Titillium Web Font - https://www.google.com/fonts/specimen/Titillium+Web
+5. svgxuse - https://github.com/Keyamoon/svgxuse
+License: Licensed under MIT license (https://github.com/Keyamoon/svgxuse/blob/master/license)
+Copyright: 2017 IcoMoon.io
+
+6. WPTT Webfont Loader - https://github.com/WPTT/webfont-loader
+License: Distributed under the terms of the MIT License (https://github.com/WPTT/webfont-loader/blob/master/LICENSE)
+Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
+
+7. Titillium Web Font - https://www.google.com/fonts/specimen/Titillium+Web
 License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
 Copyright: 2013 Accademia di Belle Arti di Urbino
 
-6. Amaranth Font - https://www.google.com/fonts/specimen/Amaranth
+8. Amaranth Font - https://www.google.com/fonts/specimen/Amaranth
 License: Distributed under the terms of the SIL Open Font License (http://scripts.sil.org/OFL)
 Copyright: Gesine Todt
 
-7. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
+9. Images used in screenshot.jpg are all from Pixabay - http://pixabay.com
 
 Image 1: https://pixabay.com/en/architecture-modern-building-facade-1048092/
 License: Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
