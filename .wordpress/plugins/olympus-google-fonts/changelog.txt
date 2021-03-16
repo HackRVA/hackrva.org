@@ -1,3 +1,142 @@
+= 2.5.5 =
+
+* Fix bug where Custom Font Files weren't being enqueued in Gutenberg.
+
+= 2.5.4 =
+
+* Update Google Fonts list
+* Improve Adobe Fonts integration
+
+= 2.5.3 =
+
+* Update localization
+
+= 2.5.1 =
+
+* Hotfix for API error
+
+= 2.5.0 =
+
+* Add support for Adobe Fonts / Typekit
+
+= 2.4.0 =
+
+* Increase max font size in Gutenberg to 150px
+
+= 2.3.9 =
+
+* Improve QS Guide page
+
+= 2.3.8 =
+
+* Administrators can now disable the editor-level font controls
+
+= 2.3.7 =
+
+* Add compatibility pack for ColorLib themes
+
+= 2.3.6 =
+
+* Add 'none' option to text-transform in the Customizer
+* Remove useless console.log in Gutenberg
+
+= 2.3.5 =
+
+* Fix bug in Classic Editor when base fonts are not chosen
+
+= 2.3.4 =
+
+* Improve CSS specificity
+
+= 2.3.3 =
+
+* Classic Editor bug fix
+
+= 2.3.2 =
+
+* Fix join() error in PHP7.4
+
+= 2.3.1 =
+
+* Gutenberg block fixes
+
+= 2.3.0 =
+
+* Add font-display option (block, swap, fallback, optional)
+
+= 2.2.4 =
+
+* Add failsafe to protect against fonts getting removed
+
+= 2.2.3 =
+
+* Update fonts list
+
+= 2.2.2 =
+
+* Block Editor improvements
+
+= 2.2.1 =
+
+* Fix broken activation redirect
+
+= 2.2.0 =
+
+* Performance improvements
+* Add easy access links in wp-admin
+
+= 2.1.9 =
+
+* Fix minor javascript error
+
+= 2.1.8 =
+
+* Fix text-transform control not showing correctly.
+* Improve color control styling.
+
+= 2.1.7 =
+
+* Fix italic fonts not listed correctly in fonts.json.
+
+= 2.1.6 =
+
+* Update fonts list.
+
+= 2.1.5 =
+
+* Rewrite CSS vars to use Automattic's theme format.
+
+= 2.1.4 =
+
+* Expand sidebar CSS selectors.
+
+= 2.1.3 =
+
+* Fix broken link in readme.
+
+= 2.1.2 =
+
+* Overwrite the Classic Editor's typography using the 'Basic Settings'.
+
+= 2.1.1 =
+
+* Fix issue where customizer wasn't loading correct font weights.
+
+= 2.1.0 =
+
+* Further optimize fonts.json.
+* Update fonts list.
+
+= 2.0.7 =
+
+* Fix array_key_exists() error, props @rafafallo
+
+= 2.0.6 =
+
+* Output the 'Basic Setting' choices as CSS variables. props @helgatheviking.
+* Fix issue where important wasn't being applied to some system fonts.
+* Add welcome page.
+
 = 2.0.5 =
 
 * Fix error notice in customizer.

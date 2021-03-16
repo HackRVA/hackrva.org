@@ -58,7 +58,7 @@ if ( ! class_exists( 'OGF_Welcome' ) ) :
 		 */
 		public function enqueue() {
 
-			wp_enqueue_script( 'ogf-dismiss-welcome', esc_url( OGF_DIR_URL . 'assets/js/dismiss.js' ), 'jquery', OGF_VERSION, false );
+			wp_enqueue_script( 'ogf-admin', esc_url( OGF_DIR_URL . 'assets/js/admin.js' ), 'jquery', OGF_VERSION, false );
 
 		}
 
@@ -80,13 +80,12 @@ if ( ! class_exists( 'OGF_Welcome' ) ) :
 		 * Display the admin notice.
 		 */
 		public function display_admin_notice() {
-
 			if ( get_option( 'dismissed-' . $this->slug, false ) ) {
 				return;
 			}
 			?>
 
-			<div class="notice notice-<?php echo esc_attr( $this->type ); ?> is-dismissible notice-dismiss-dc"  data-notice="<?php echo esc_attr( $this->slug ); ?>">
+			<div class="notice notice-<?php echo esc_attr( $this->type ); ?> is-dismissible notice-dismiss-dc" data-notice="<?php echo esc_attr( $this->slug ); ?>">
 				<p>
 					<?php
 						echo $this->message; // WPCS: XSS ok.
@@ -95,7 +94,6 @@ if ( ! class_exists( 'OGF_Welcome' ) ) :
 			</div>
 			<?php
 		}
-
 	}
 endif;
 

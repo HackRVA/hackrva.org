@@ -11,7 +11,6 @@
  * An array of user-defined elements that can be customized using the plugin.
  */
 function ogf_get_custom_elements() {
-
 	$theme_mod = get_theme_mod( 'ogf_custom_selectors', false );
 
 	if ( ! $theme_mod ) {
@@ -25,14 +24,12 @@ function ogf_get_custom_elements() {
 	}
 
 	return $custom_selectors;
-
 }
 
 /**
  * An array of elements that can be customized using the plugin.
  */
 function ogf_get_elements() {
-
 	$elements = array(
 		'ogf_body' => array(
 			'label'       => esc_html__( 'Base Typography', 'olympus-google-fonts' ),
@@ -50,13 +47,13 @@ function ogf_get_elements() {
 			'label'       => esc_html__( 'Buttons and Inputs Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your input fields and buttons.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_basic',
-			'selectors'   => 'button, input, select, textarea',
+			'selectors'   => 'button, .button, input, select, textarea, .wp-block-button, .wp-block-button__link',
 		),
 		'ogf_site_title' => array(
 			'label'       => esc_html__( 'Site Title Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your site title.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__branding',
-			'selectors'   => '#site-title, .site-title, #site-title a, .site-title a, #logo, #logo a, .logo, .logo a',
+			'selectors'   => '#site-title, .site-title, #site-title a, .site-title a, #site-logo, #site-logo a, #logo, #logo a, .logo, .logo a',
 		),
 		'ogf_site_description' => array(
 			'label'       => esc_html__( 'Site Description Typography', 'olympus-google-fonts' ),
@@ -74,55 +71,55 @@ function ogf_get_elements() {
 			'label'       => esc_html__( 'Content Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your post and page content.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-content, .entry-content p, .post-content, .page-content, .post-excerpt, .entry-summary, .entry-excerpt, .excerpt, .excerpt p',
+			'selectors'   => '.entry-content, .entry-content p, .post-content, .page-content, .post-excerpt, .entry-summary, .entry-excerpt, .excerpt, .excerpt p, .type-post p, .type-page p',
 		),
 		'ogf_post_page_h1' => array(
 			'label'       => esc_html__( 'Title and H1 Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your title and H1 headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-title, .entry-title a, .post-title, .post-title a, .page-title, .entry-content h1, #content h1',
+			'selectors'   => '.entry-title, .entry-title a, .post-title, .post-title a, .page-title, .entry-content h1, #content h1, .type-post h1, .type-page h1',
 		),
 		'ogf_post_page_h2' => array(
 			'label'       => esc_html__( 'H2 Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your H2 headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-content h2, .post-content h2, .page-content h2, #content h2',
+			'selectors'   => '.entry-content h2, .post-content h2, .page-content h2, #content h2, .type-post h2, .type-page h2',
 		),
 		'ogf_post_page_h3' => array(
 			'label'       => esc_html__( 'H3 Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your H3 headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-content h3, .post-content h3, .page-content h3, #content h3',
+			'selectors'   => '.entry-content h3, .post-content h3, .page-content h3, #content h3, .type-post h3, .type-page h3',
 		),
 		'ogf_post_page_h4' => array(
 			'label'       => esc_html__( 'H4 Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your H4 headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-content h4, .post-content h4, .page-content h4, #content h4',
+			'selectors'   => '.entry-content h4, .post-content h4, .page-content h4, #content h4, .type-post h4, .type-page h4',
 		),
 		'ogf_post_page_h5' => array(
 			'label'       => esc_html__( 'H5 Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your H5 headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-content h5, .post-content h5, .page-content h5, #content h5',
+			'selectors'   => '.entry-content h5, .post-content h5, .page-content h5, #content h5, .type-post h5, .type-page h5',
 		),
 		'ogf_post_page_h6' => array(
 			'label'       => esc_html__( 'H6 Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your H6 headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__content',
-			'selectors'   => '.entry-content h6, .post-content h6, .page-content h6, #content h6',
+			'selectors'   => '.entry-content h6, .post-content h6, .page-content h6, #content h6, .type-post h6, .type-page h6',
 		),
 		'ogf_sidebar_headings' => array(
 			'label'       => esc_html__( 'Headings Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your sidebar headings.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__sidebar',
-			'selectors'   => '.widget-title, .widget-area h1, .widget-area h2, .widget-area h3, .widget-area h4, .widgets-area h5, .widget-area h6',
+			'selectors'   => '.widget-title, .widget-area h1, .widget-area h2, .widget-area h3, .widget-area h4, .widgets-area h5, .widget-area h6, #secondary h1, #secondary h2, #secondary h3, #secondary h4, #secondary h5, #secondary h6',
 		),
 		'ogf_sidebar_content' => array(
 			'label'       => esc_html__( 'Content Typography', 'olympus-google-fonts' ),
 			'description' => esc_html__( 'Select and configure the font for your sidebar content.', 'olympus-google-fonts' ),
 			'section'     => 'ogf_advanced__sidebar',
-			'selectors'   => '.widget-area, .widget, .sidebar, #sidebar',
+			'selectors'   => '.widget-area, .widget, .sidebar, #sidebar, #secondary',
 		),
 		'ogf_footer_headings' => array(
 			'label'       => esc_html__( 'Headings Typography', 'olympus-google-fonts' ),
@@ -141,7 +138,6 @@ function ogf_get_elements() {
 	);
 
 	return apply_filters( 'ogf_elements', $elements );
-
 }
 
 /**
@@ -150,7 +146,6 @@ function ogf_get_elements() {
  * @return array    All Google Fonts.
  */
 function ogf_fonts_array() {
-
 	$fonts_json = file_get_contents( OGF_DIR_PATH . '/blocks/src/google-fonts/fonts.json' );
 
 	// Change the object to a multidimensional array.
@@ -160,7 +155,6 @@ function ogf_fonts_array() {
 	foreach ( $fonts_array['items'] as $key => $font ) {
 
 		$variants_remove = array(
-			'italic',
 			'100italic',
 			'200italic',
 			'300italic',
@@ -170,16 +164,22 @@ function ogf_fonts_array() {
 			'700italic',
 			'800italic',
 			'900italic',
+			'100i',
+			'200i',
+			'300i',
+			'400i',
+			'500i',
+			'600i',
+			'700i',
+			'800i',
+			'900i',
 		);
 
 		// remove italic variants.
-		$font['variants'] = array_diff( $font['variants'], $variants_remove );
-
-		// replace regular with numberic identifier.
-		$font['variants'] = str_replace( 'regular', '400', $font['variants'] );
+		$font['v'] = array_diff( $font['v'], $variants_remove );
 
 		// flip the key/values.
-		$font['variants'] = array_flip( $font['variants'] );
+		$font['v'] = array_flip( $font['v'] );
 
 		$fonts_array['items'][ $key ] = $font;
 
@@ -187,11 +187,25 @@ function ogf_fonts_array() {
 
 	// Change the array key to the font's ID.
 	foreach ( $fonts_array['items'] as $font ) {
-		$id           = trim( strtolower( str_replace( ' ', '-', $font['family'] ) ) );
+		$id           = trim( strtolower( str_replace( ' ', '-', $font['f'] ) ) );
 		$fonts[ $id ] = $font;
 	}
 
 	return $fonts;
+}
+
+/**
+ * Return a array of custom fonts.
+ */
+function ogf_custom_fonts() {
+	return OGF_Fonts_Taxonomy::get_fonts();
+}
+
+/**
+ * Return a array of custom fonts.
+ */
+function ogf_typekit_fonts() {
+	return OGF_Typekit::get_fonts();
 }
 
 /**
@@ -207,12 +221,12 @@ function ogf_system_fonts() {
 		'calibri' => array(
 			'id'    => 'calibri',
 			'label' => esc_html__( 'Calibri', 'olympus-google-fonts' ),
-			'stack' => 'Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;',
+			'stack' => 'Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif',
 		),
 		'century-gothic' => array(
 			'id'    => 'century-gothic',
 			'label' => esc_html__( 'Century Gothic', 'olympus-google-fonts' ),
-			'stack' => 'Century Gothic, CenturyGothic, AppleGothic, sans-serif;',
+			'stack' => 'Century Gothic, CenturyGothic, AppleGothic, sans-serif',
 		),
 		'consolas' => array(
 			'id'    => 'consolas',
@@ -272,14 +286,13 @@ function ogf_system_fonts() {
 		'verdana' => array(
 			'id'    => 'verdana',
 			'label' => esc_html__( 'Verdana', 'olympus-google-fonts' ),
-			'stack' => 'Verdana, Geneva, sans-serif;',
+			'stack' => 'Verdana, Geneva, sans-serif',
 		),
 	);
 
 	$filtered_system_fonts = apply_filters( 'ogf_system_fonts', $system_fonts );
 
 	return $filtered_system_fonts;
-
 }
 
 /**
@@ -315,8 +328,62 @@ function ogf_font_variants() {
  * @param string $font_id The ID of the font to check.
  */
 function ogf_is_system_font( $font_id ) {
+	if ( ! is_string( $font_id ) ) {
+		return false;
+	}
+
 	if ( strpos( $font_id, 'sf-' ) === 0 ) {
 		return true;
 	}
+	return false;
+}
+
+/**
+ * Check if a font is a custom font (not Google Font).
+ *
+ * @param string $font_id The ID of the font to check.
+ */
+function ogf_is_custom_font( $font_id ) {
+	if ( ! is_string( $font_id ) ) {
+		return false;
+	}
+
+	if ( strpos( $font_id, 'cf-' ) === 0 ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Check if a font is a Typekit font (not Google Font).
+ *
+ * @param string $font_id The ID of the font to check.
+ */
+function ogf_is_typekit_font( $font_id ) {
+
+	if ( ! is_string( $font_id ) ) {
+		return false;
+	}
+
+	if ( strpos( $font_id, 'tk-' ) === 0 ) {
+		return true;
+	}
+	return false;
+}
+
+/**
+ * Check if a font is a Google font.
+ *
+ * @param string $font_id The ID of the font to check.
+ */
+function ogf_is_google_font( $font_id ) {
+	if ( ! is_string( $font_id ) ) {
+		return false;
+	}
+
+	if ( array_key_exists( $font_id, OGF_Fonts::$google_fonts ) ) {
+		return true;
+	}
+
 	return false;
 }

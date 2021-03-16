@@ -17,7 +17,7 @@ class OGF_Fonts {
 	 *
 	 * @var array
 	 */
-	public $google_fonts = array();
+	public static $google_fonts = array();
 
 	/**
 	 * The users font choices.
@@ -30,17 +30,14 @@ class OGF_Fonts {
 	 * Let's get started.
 	 */
 	public function __construct() {
-
-		$this->google_fonts = ogf_fonts_array();
+		self::$google_fonts = ogf_fonts_array();
 		$this->get_choices();
-
 	}
 
 	/**
 	 * Get the users font choices.
 	 */
 	public function get_choices() {
-
 		$elements = array_keys( ogf_get_elements() );
 
 		foreach ( $elements as $element ) {
@@ -64,7 +61,6 @@ class OGF_Fonts {
 				$this->choices[] = $value;
 			}
 		}
-
 	}
 
 	/**
@@ -73,9 +69,7 @@ class OGF_Fonts {
 	 * @param string $font The font we are getting the id of.
 	 */
 	public function get_font_id( $font ) {
-
 		return str_replace( ' ', '+', $font );
-
 	}
 
 	/**
@@ -84,8 +78,11 @@ class OGF_Fonts {
 	 * @param string $font_id The font ID.
 	 */
 	public function get_font_weights( $font_id ) {
+		$weights = self::$google_fonts[ $font_id ]['v'];
 
-		$weights = $this->google_fonts[ $font_id ]['variants'];
+		if ( ! is_array( $weights ) ) {
+			return array();
+		}
 
 		unset( $weights['0'] );
 
@@ -94,7 +91,6 @@ class OGF_Fonts {
 		}
 
 		return $weights;
-
 	}
 
 	/**
@@ -103,22 +99,31 @@ class OGF_Fonts {
 	 * @param string $font_id The font ID.
 	 */
 	public function get_font_name( $font_id ) {
+		if ( array_key_exists( $font_id, self::$google_fonts ) ) {
+			return self::$google_fonts[ $font_id ]['f'];
+		} else {
+			return __( 'Font Missing', 'olympus-google-fonts' );
+		}
+	}
 
-		return $this->google_fonts[ $font_id ]['family'];
-
+	/**
+	 * DEPRECATED use has_google_fonts() instead.
+	 */
+	public function has_custom_fonts() {
+		return $this->has_google_fonts();
 	}
 
 	/**
 	 * Helper to check if the user is using any Google fonts.
 	 */
-	public function has_custom_fonts() {
+	public function has_google_fonts() {
 
 		if ( empty( $this->choices ) ) {
 			return false;
 		}
 
 		foreach ( $this->choices as $choice ) {
-			if ( ! ogf_is_system_font( $choice ) ) {
+			if ( ! ogf_is_system_font( $choice ) && ! ogf_is_custom_font( $choice ) && ! ogf_is_typekit_font( $choice ) ) {
 				return true;
 			}
 		}
@@ -134,7 +139,6 @@ class OGF_Fonts {
 	 * @param string $weights The font weights.
 	 */
 	public function filter_selected_weights( $font_id, $weights ) {
-
 		unset( $weights['0'] );
 
 		foreach ( $weights as $key => $value ) {
@@ -147,14 +151,12 @@ class OGF_Fonts {
 			return $weights;
 		}
 		return array_intersect_key( $weights, array_flip( $selected_weights ) );
-
 	}
 
 	/**
 	 * Return the Google Fonts url.
 	 */
 	public function build_url() {
-
 		$families = array();
 		$subsets  = array();
 
@@ -167,34 +169,23 @@ class OGF_Fonts {
 		foreach ( $fonts as $font_id ) {
 
 			// Check the users choice is a real font.
-			if ( array_key_exists( $font_id, $this->google_fonts ) ) {
+			if ( array_key_exists( $font_id, self::$google_fonts ) ) {
 
-				$font_id_for_url = $this->get_font_id( $this->google_fonts[ $font_id ]['family'] );
+				$font_id_for_url = $this->get_font_id( self::$google_fonts[ $font_id ]['f'] );
 
-				$weights = $this->filter_selected_weights( $font_id, $this->google_fonts[ $font_id ]['variants'] );
+				$weights = $this->filter_selected_weights( $font_id, self::$google_fonts[ $font_id ]['v'] );
 
 				$families[] = $font_id_for_url . ':' . implode( ',', array_keys( $weights ) );
 
-				$subsets_array = $this->google_fonts[ $font_id ]['subsets'];
-
-				// Build an array of the subsets that need to be loaded.
-				foreach ( $subsets_array as $subset ) {
-
-					if ( ! in_array( $subset, $subsets, true ) ) {
-						$subsets[] = $subset;
-					}
-				}
 			}
 		}
 
-			$query_args = array(
-				'family'  => implode( '|', $families ),
-				'subset'  => implode( ',', $subsets ),
-				'display' => 'swap',
-			);
+		$query_args = array(
+			'family'  => implode( '|', $families ),
+			'display' => get_theme_mod( 'ogf_font_display', 'swap' ),
+		);
 
-			return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-
+		return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	}
 
 }

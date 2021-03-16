@@ -1,4 +1,4 @@
-/* global ogf_elements, ogf_system_fonts */
+/* global ogf_elements, ogf_system_fonts, ogf_custom_fonts */
 jQuery( document ).ready(
 	function() {
 		// Retrieve the Google Fonts url from the Customizer and append it to head.
@@ -19,6 +19,15 @@ jQuery( document ).ready(
 					const fontID = value.replace( 'sf-', '' );
 					v.style.setProperty( 'font-family', ogf_system_fonts[ fontID ].stack, 'important' );
 				} );
+			} else if ( isCustomFont( value ) ) {
+				jQuery( selector ).each( function( i, v ) {
+					const fontID = value.replace( 'cf-', '' );
+					v.style.setProperty( 'font-family', ogf_custom_fonts[ fontID ].stack, 'important' );
+				} );
+			} else if ( isTypekitFont( value ) ) {
+				jQuery( selector ).each( function( i, v ) {
+					v.style.setProperty( 'font-family', ogf_typekit_fonts[ value ].stack, 'important' );
+				} );
 			} else {
 				jQuery( selector ).each( function( i, v ) {
 					v.style.setProperty( 'font-family', '"' + value.split( '-' ).join( ' ' ) + '"', 'important' );
@@ -28,6 +37,20 @@ jQuery( document ).ready(
 
 		function isSystemFont( fontID ) {
 			if ( fontID.indexOf( 'sf-' ) !== -1 ) {
+				return true;
+			}
+			return false;
+		}
+
+		function isCustomFont( fontID ) {
+			if ( fontID.indexOf( 'cf-' ) !== -1 ) {
+				return true;
+			}
+			return false;
+		}
+
+		function isTypekitFont( fontID ) {
+			if ( fontID.indexOf( 'tk-' ) !== -1 ) {
 				return true;
 			}
 			return false;
@@ -118,6 +141,37 @@ jQuery( document ).ready(
 					);
 				}
 			);
+
+			wp.customize(
+				id + '_text_transform',
+				function( value ) {
+					value.bind(
+						function( to ) {
+							jQuery( val.selectors ).each( function( i, v ) {
+								v.style.setProperty( 'text-transform', to, 'important' );
+							} );
+						}
+					);
+				}
+			);
+
+			wp.customize(
+				id + '_letter_spacing',
+				function( value ) {
+					value.bind(
+						function( to ) {
+							jQuery( val.selectors ).each( function( i, v ) {
+								if ( to === '' ) {
+									wp.customize.preview.send( 'refresh' );
+								} else {
+									v.style.setProperty( 'letter-spacing', to + 'px', 'important' );
+								}
+							} );
+						}
+					);
+				}
+			);
+
 		} );
 	}
 ); // jQuery( document ).ready
