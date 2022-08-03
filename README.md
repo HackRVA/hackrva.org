@@ -1,19 +1,33 @@
-# HackRVA.org
-This a dockerized wordpress site [hackrva.org](https://hackrva.org)
+# Hackrva.org
 
-## database
-The database is not included in this repo.  If you are looking to restore this site, you will have to pull the database from a backup.
+This is an experiment of building this site with a static site generator - using [Docusaurus 2](https://docusaurus.io/),.
 
-Create a folder `database/initdb.d` to store sql files that should run at container initialization.
-
-## .env
-
-Environment variables are stored in a `.env` file that is not committed to this repo.
-Contents of `.env` should look like the following:
+### Installation
 
 ```
-MYSQL_ROOT_PASSWORD=somevalue
-MYSQL_DATABASE=somevalue
-MYSQL_USER=somevalue
-MYSQL_PASSWORD=somevalue
+$ npm ci
+```
+
+### Local Development
+
+```
+$ npm start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ npm run build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true npm run deploy
 ```

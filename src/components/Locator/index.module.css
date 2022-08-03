@@ -1,0 +1,11 @@
+.openHouseAd {
+  /* background-color: white;
+  color: black; */
+  /* background-color: var(--ifm-heading-background-color);
+  color: var(--ifm-heading-color); */
+  /* background-color: var(--ifm-color-primary-darkest);
+  color: var(--ifm-heading-color); */
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+}
