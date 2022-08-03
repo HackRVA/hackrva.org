@@ -1,6 +1,7 @@
 # Hackrva.org
 
 This is an experiment of building this site with a static site generator - using [Docusaurus 2](https://docusaurus.io/),.
+[demo](https://hackrva.github.io/hackrva.org/)
 
 ### Installation
 
