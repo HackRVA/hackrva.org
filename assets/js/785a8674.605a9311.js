@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhrva_org=self.webpackChunkhrva_org||[]).push([[93],{26300:e=>{e.exports=JSON.parse('{"permalink":"/hackrva.org/blog/tags/events","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

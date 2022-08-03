@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhrva_org=self.webpackChunkhrva_org||[]).push([[8968],{1627:a=>{a.exports=JSON.parse('{"label":"laser-cutter","permalink":"/hackrva.org/blog/tags/laser-cutter","allTagsPath":"/hackrva.org/blog/tags","count":1}')}}]);

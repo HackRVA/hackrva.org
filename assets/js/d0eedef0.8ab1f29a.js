@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhrva_org=self.webpackChunkhrva_org||[]).push([[3101],{4079:e=>{e.exports=JSON.parse('{"permalink":"/hackrva.org/blog/tags/zine","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

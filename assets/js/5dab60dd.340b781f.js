@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhrva_org=self.webpackChunkhrva_org||[]).push([[1098],{42195:a=>{a.exports=JSON.parse('{"label":"paper-circuit","permalink":"/hackrva.org/blog/tags/paper-circuit","allTagsPath":"/hackrva.org/blog/tags","count":1}')}}]);
