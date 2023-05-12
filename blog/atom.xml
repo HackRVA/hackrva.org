@@ -2,11 +2,86 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hackrva.github.io/hackrva.org/blog</id>
     <title>HackRVA Blog</title>
-    <updated>2021-02-14T00:00:00.000Z</updated>
+    <updated>2023-05-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hackrva.github.io/hackrva.org/blog"/>
     <subtitle>HackRVA Blog</subtitle>
     <icon>https://hackrva.github.io/hackrva.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[May Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/may_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/may_newsletter"/>
+        <updated>2023-05-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2023/may.htm" title="HackRVA May Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[April Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/april_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/april_newsletter"/>
+        <updated>2023-04-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2023/april.htm" title="HackRVA April Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[March Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/march_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/march_newsletter"/>
+        <updated>2023-03-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2023/march.htm" title="HackRVA March Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stop The Bleed]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/stop_the_bleed</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/stop_the_bleed"/>
+        <updated>2023-02-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[stop the bleed img]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="stop the bleed img" src="/hackrva.org/assets/images/Bleed-a10ff91b20bd9fa6f43207d6caa31c5a.webp" width="985" height="591" class="img_ev3q"></p><p>Last Saturday, we had a class on treatment of serious, traumatic bleeding. It was taught by a certified instructor, and now a member is certified to teach the class in the future. We have never had a serious injury at hack.RVA, but we like to try to be safe. We have first aid kits in every room, some including special clotting material. We have fire extinguishers in almost every room, although we might need to have a class or two on their use. We have training for members on the safe use of all of our equipment, but we know people sometimes forget or ignore safety. We ask members to watch out for each other, and say something before something bad happens.</p>]]></content>
+        <author>
+            <name>Kent D.</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[February Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/february_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/february_newsletter"/>
+        <updated>2023-02-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2023/february.htm" title="HackRVA Jan Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[January Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/january_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/january_newsletter"/>
+        <updated>2023-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2023/january.htm" title="HackRVA January Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[December Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2022/december_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2022/december_newsletter"/>
+        <updated>2022-12-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2022/december.htm" title="HackRVA December Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[November Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2022/november_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2022/november_newsletter"/>
+        <updated>2022-11-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2022/november.htm" title="HackRVA November Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[October Newsletter]]></title>
+        <id>https://hackrva.github.io/hackrva.org/blog/2022/october_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2022/october_newsletter"/>
+        <updated>2022-10-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<iframe]]></summary>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/2022/october.htm" title="HackRVA October Newsletter" width="100%" height="1000px"></iframe>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Blog is Dead, Long Live the Blog!]]></title>
         <id>https://hackrva.github.io/hackrva.org/blog/2021/the-blog-is-dead-long-live-the-blog-2</id>
