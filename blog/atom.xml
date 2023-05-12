@@ -9,11 +9,11 @@
     <icon>https://hackrva.github.io/hackrva.org/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[May Newsletter]]></title>
-        <id>https://hackrva.github.io/hackrva.org/blog/2023/newsletter</id>
-        <link href="https://hackrva.github.io/hackrva.org/blog/2023/newsletter"/>
+        <id>https://hackrva.github.io/hackrva.org/blog/2023/may_newsletter</id>
+        <link href="https://hackrva.github.io/hackrva.org/blog/2023/may_newsletter"/>
         <updated>2023-05-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[<iframe]]></summary>
-        <content type="html"><![CDATA[<iframe src="newsletters/may.htm" title="HackRVA May Newsletter" width="100%" height="1000px"></iframe>]]></content>
+        <content type="html"><![CDATA[<iframe src="/hackrva.org/newsletters/may.htm" title="HackRVA May Newsletter" width="100%" height="1000px"></iframe>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[The Blog is Dead, Long Live the Blog!]]></title>

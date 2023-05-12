@@ -10,11 +10,11 @@
         <language>en</language>
         <item>
             <title><![CDATA[May Newsletter]]></title>
-            <link>https://hackrva.github.io/hackrva.org/blog/2023/newsletter</link>
-            <guid>https://hackrva.github.io/hackrva.org/blog/2023/newsletter</guid>
+            <link>https://hackrva.github.io/hackrva.org/blog/2023/may_newsletter</link>
+            <guid>https://hackrva.github.io/hackrva.org/blog/2023/may_newsletter</guid>
             <pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[<iframe]]></description>
-            <content:encoded><![CDATA[<iframe src="newsletters/may.htm" title="HackRVA May Newsletter" width="100%" height="1000px"></iframe>]]></content:encoded>
+            <content:encoded><![CDATA[<iframe src="/hackrva.org/newsletters/may.htm" title="HackRVA May Newsletter" width="100%" height="1000px"></iframe>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Blog is Dead, Long Live the Blog!]]></title>
