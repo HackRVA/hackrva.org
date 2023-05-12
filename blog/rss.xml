@@ -4,10 +4,18 @@
         <title>HackRVA Blog</title>
         <link>https://hackrva.github.io/hackrva.org/blog</link>
         <description>HackRVA Blog</description>
-        <lastBuildDate>Sun, 14 Feb 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 May 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[May Newsletter]]></title>
+            <link>https://hackrva.github.io/hackrva.org/blog/2023/newsletter</link>
+            <guid>https://hackrva.github.io/hackrva.org/blog/2023/newsletter</guid>
+            <pubDate>Mon, 01 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[<iframe]]></description>
+            <content:encoded><![CDATA[<iframe src="newsletters/may.htm" title="HackRVA May Newsletter" width="100%" height="1000px"></iframe>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[The Blog is Dead, Long Live the Blog!]]></title>
             <link>https://hackrva.github.io/hackrva.org/blog/2021/the-blog-is-dead-long-live-the-blog-2</link>

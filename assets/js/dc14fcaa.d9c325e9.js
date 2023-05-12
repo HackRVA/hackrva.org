@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhrva_org=self.webpackChunkhrva_org||[]).push([[5818],{18537:a=>{a.exports=JSON.parse('{"permalink":"/hackrva.org/blog/page/2","page":2,"postsPerPage":10,"totalPages":11,"totalCount":109,"previousPage":"/hackrva.org/blog","nextPage":"/hackrva.org/blog/page/3","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
