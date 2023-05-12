@@ -1,39 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
 
-import styles from './index.module.css';
-import Locator from '../components/Locator';
-import EquipmentGallery from '../components/EquipmentGallery/EquipmentGallery';
-import AboutAssertions from '../components/AboutAssertions/AboutAssertions';
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">About HackRVA</h1>
-        <div className={styles.buttons}>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-function HackerspaceExplanation(): JSX.Element {
-  return (
-    <div className="container">
-      <h1>What is a hackerspace?</h1>
-      <p>
-        A <a href="https://en.wikipedia.org/wiki/Hackerspace">hackerspace</a> is a community where people with an interest in arts, manufacturing,
-        computing and technology can gather to work on projects while sharing ideas,
-        equipment, and knowledge
-      </p>
-      <a href="https://wiki.hackerspaces.org/">wiki.hackerspaces.org</a>
-    </div>
-  )
-}
+import EquipmentGallery from '../EquipmentGallery/EquipmentGallery';
 
 const electronicsPhotos = [
   {
@@ -149,19 +116,9 @@ const textileEquipment = [
   "3D Doodler",
 ]
 
-export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+export default function (): JSX.Element {
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main className='container'>
-        <br />
-        <HackerspaceExplanation />
-        <br />
-        <AboutAssertions />
-
+    <>
         <br />
         <EquipmentGallery
           title="Electronics"
@@ -181,9 +138,6 @@ export default function Home(): JSX.Element {
           equipment={woodshopEquipment}
           fullListURL="https://wiki.hackrva.org/index.php/Equipment#Shop_Equipment" />
         <br />
-
-      </main>
-      <Locator />
-    </Layout>
+    </>
   );
 }

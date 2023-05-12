@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'HackRVA',
-  tagline: "Richmond's Hackerspace",
+  tagline: "Richmond's Hackerspace since 2009",
   url: 'https://hackrva.github.io',
   baseUrl: '/hackrva.org/',
   onBrokenLinks: 'throw',
@@ -64,6 +64,7 @@ const config = {
         },
         items: [
           {to: '/about', label: 'About', position: 'left'},
+          {to: '/calendar', label: 'Calendar', position: 'left'},
           {to: '/membership', label: 'Membership', position: 'left'},
           // {
           //   type: 'doc',
@@ -84,12 +85,28 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Links',
             items: [
-              // {
-              //   label: 'Tutorial',
-              //   to: '/docs/intro',
-              // },
+              {
+                label: 'Wiki',
+                to: 'http://wiki.hackrva.org/',
+              },
+              {
+                label: 'Photos',
+                to: 'http://www.flickr.com/photos/hackrva',
+              },
+              {
+                label: 'Thingiverse',
+                to: 'http://www.thingiverse.com/HackRVA/designs',
+              },
+              {
+                label: 'Youtube',
+                to: 'https://www.youtube.com/user/HackRVA',
+              },
+              {
+                label: 'Richmond Maker Map',
+                to: 'https://mapsengine.google.com/map/edit?mid=zR5arxdgxvHk.kv0AxPoIw1WY',
+              },
             ],
           },
           {
@@ -98,7 +115,15 @@ const config = {
               {
                 label: "Meetup",
                 href: "https://www.meetup.com/hackrva-meetup/",
-              }
+              },
+              {
+                label: 'Slack Chat',
+                to: 'http://wiki.hackrva.org/index.php?title=Online_Chat_Channel',
+              },
+              {
+                label: 'Facebook',
+                to: 'https://www.facebook.com/hackrva',
+              },
             ],
           },
           {
@@ -122,6 +147,14 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    plugins: [
+      [
+        "docusaurus2-dotenv",
+        {
+          systemvars: true,
+        },
+      ],
+    ],
 };
 
 module.exports = config;

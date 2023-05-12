@@ -1,6 +1,6 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
-import styles from './index.module.css';
+import styles from './styles.module.css';
 
 export default function (props): JSX.Element {
     return <div className={styles.container}>

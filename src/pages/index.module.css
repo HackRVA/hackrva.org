@@ -16,23 +16,25 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
+.buttonContainer {
+  display:flex;
   justify-content: center;
+}
+
+.buttonContainer a {
+  margin-left:1rem;
+  margin-right:1rem;
 }
 
 ul {
   list-style: none;
 }
 
-
-
 .checked ul li {
   color: red;
 }
 
-.paypalButtonContainer {
+/* .paypalButtonContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
+} */
