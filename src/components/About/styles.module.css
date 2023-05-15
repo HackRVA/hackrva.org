@@ -1,0 +1,71 @@
+.whatWeAreWrapper {
+  display:grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  grid-gap:2rem;
+}
+
+.whatWeAreWrapper div {
+  text-align: center;
+}
+
+.whatWeAreHeader h1 {
+  padding-top: 1rem;
+}
+
+.whatWeAreHeader {
+  color: white;
+  background-color: var(--ifm-color-primary);
+  height: 5rem;
+}
+
+.checkedWrapper {
+  background-color: white;
+  color: black;
+  height: 100%;
+}
+
+.whatWeAreWrapper .checkedWrapper ul li:before   {
+  content: '✓ ';
+  color: green;
+}
+
+.exWrapper {
+  background-color: white;
+  color: black;
+  height: 100%;
+}
+
+.whatWeAreWrapper .exWrapper ul li:before   {
+  content: 'X ';
+  color: red;
+}
+
+.whatWeAreWrapper .exWrapper p {
+  font-size: 8pt;
+}
+
+
+.whatWeAreHeader ul {
+  list-style: none;
+  text-align: center;
+  padding-left:0;
+}
+
+.whatWeAreHeader ul li p {
+  font-size: x-small;
+}
+
+.whatWeAreHeader ul li {
+  box-sizing: border-box;
+  border-bottom: 2px rgba(128, 128, 128, 0.301) solid;
+  padding-top: 1rem;
+}
+
+.whatWeAreHeader ul li:last-child {
+  border-bottom: none;
+}
+
+.whatWeAreHeader ul li i {
+  padding-right: 1rem;
+}

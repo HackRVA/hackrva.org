@@ -1,0 +1,12 @@
+.noBullets {
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.listContainer {
+  width: 15vw;
+}
