@@ -1,0 +1,205 @@
+:root {
+  --bulma-primary: #36638e;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  margin-top: 2rem;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.hero {
+  /*background-color: var(--bulma-primary)*/
+  background-color: #36638e;
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.adContainer {
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.adContainer h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.adContainer img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #303846;
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.footer__items {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__item {
+  margin-bottom: 0.5rem;
+}
+
+.footer__link-item {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__bottom {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.features-container {
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+#home-page-features-container {
+  background-color: white;
+}
+
+.whatWeAreWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .whatWeAreWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whatWeAreHeader {
+  color: white;
+  background-color: var(--bulma-primary);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.whatWeAreHeader h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.checkedWrapper,
+.exWrapper {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.whatWeAreWrapper .checkedWrapper ul li:before {
+  content: "✓ ";
+  color: green;
+}
+
+.whatWeAreWrapper .exWrapper ul li:before {
+  content: "X ";
+  color: red;
+}
+
+.whatWeAreWrapper .exWrapper p {
+  font-size: 8pt;
+}
+
+.whatWeAreWrapper ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.whatWeAreWrapper ul li p {
+  font-size: x-small;
+}
+
+.whatWeAreWrapper ul li {
+  box-sizing: border-box;
+  border-bottom: 2px rgba(128, 128, 128, 0.301) solid;
+  padding: 1rem 0;
+  padding-left: 1rem;
+}
+
+.whatWeAreWrapper ul li:last-child {
+  border-bottom: none;
+}
+
+.whatWeAreWrapper ul li i {
+  padding-right: 1rem;
+}
+
+.paypalButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.paypalButtonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.paypalButton {
+  border: 1px solid darkgrey;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.paypalButtonGroupHide {
+  display: none;
+}
+
+map-locator {
+  margin-bottom: 0;
+}
+
+footer-element {
+  margin-top: 0;
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackRVA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <top-nav></top-nav>
+    <section style="padding-top: 4rem; background-color: white">
+      <div
+        class="container"
+        style="
+          width: 60%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        "
+      >
+        <div style="padding-bottom: 3rem">
+          <h1 class="title">Calendar</h1>
+          <p></p>
+          The
+          <a href="https://www.meetup.com/HackRVA-Meetup/">meetup page</a>
+          might be amore accurate representation of events at hackrva.
+          <p>
+            The HackRVA Calender. See when classes, hackathons, open houses,
+            special interest meetings, and general events are scheduled. Click
+            into an event for detailed information. Special events with
+            additional details can also be seen at HackRVA meetup , though all
+            events are also listed here on the calender. (Some classes do
+            require sign up through meetup though, to help limit class size and
+            maintain a wait list). If you're a member and would like to host an
+            event or teach a class, contact us. Everyone's encouraged to teach,
+            learn, and do.
+          </p>
+        </div>
+        <google-calendar></google-calendar>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <open-house-promotion></open-house-promotion>
+          </div>
+          <div class="column is-one-third">
+            <monthly-member-meeting></monthly-member-meeting>
+          </div>
+          <div class="column is-one-third">
+            <upcoming-events></upcoming-events>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <map-locator></map-locator>
+    <footer-element></footer-element>
+
+    <script type="module" src="../index.js"></script>
+  </body>
+</html>
