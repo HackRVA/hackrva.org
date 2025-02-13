@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackRVA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <top-nav></top-nav>
+    <section style="padding-top: 4rem; background-color: white">
+      <div class="container" style="width: 60%">
+        <h1 class="is-size-3" style="font-weight: bold">
+          What is a hackerspace?
+        </h1>
+        <p>
+          A
+          <a href="https://en.wikipedia.org/wiki/Hackerspace">hackerspace</a> is
+          a community where people with an interest in arts, manufacturing,
+          computing and technology can gather to work on projects while sharing
+          ideas, equipment, and knowledge
+        </p>
+        <a href="https://wiki.hackerspaces.org/">wiki.hackerspaces.org</a>
+        <assertions-element></assertions-element>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <open-house-promotion></open-house-promotion>
+          </div>
+          <div class="column is-one-third">
+            <monthly-member-meeting></monthly-member-meeting>
+          </div>
+          <div class="column is-one-third">
+            <upcoming-events></upcoming-events>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <map-locator></map-locator>
+    <footer-element></footer-element>
+
+    <script type="module" src="../index.js"></script>
+  </body>
+</html>
